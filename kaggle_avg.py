@@ -16,10 +16,9 @@ def kaggle_bag(glob_files, loc_outfile, method="average", weights="uniform"):
 					outfile.write(line)
 				if e > 0:
 					row = line.strip().split(",")
-					
-					
 					scores[(e,row[0])] += float(row[1])
 		for j,k in sorted(scores):
 			outfile.write("%s,%f\n"%(k,scores[(j,k)]/(i+1)))
+		print("wrote to %s"%loc_outfile)
 
 kaggle_bag(glob_files, loc_outfile)
