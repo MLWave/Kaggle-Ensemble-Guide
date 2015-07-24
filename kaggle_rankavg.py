@@ -1,7 +1,6 @@
-from __future__ import division
+from collections import defaultdict
 from glob import glob
 import sys
-from collections import defaultdict
 
 glob_files = sys.argv[1]
 loc_outfile = sys.argv[2]

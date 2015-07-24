@@ -1,11 +1,10 @@
-from sklearn import ensemble, cross_validation, preprocessing, linear_model, neighbors, svm, calibration
-from sklearn.metrics import log_loss, accuracy_score, roc_auc_score
+from sklearn import cross_validation
+from sklearn.metrics import log_loss, accuracy_score
 import numpy as np
 import pandas as pd
 import random
 import md5
 import json
-from glob import glob
 
 def blend_proba(clf, X_train, y, X_test, nfolds=5, save_preds="",
                 save_test_only="", seed=300373, save_params="",
