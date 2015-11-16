@@ -6,6 +6,13 @@ For more information: http://mlwave.com/kaggle-ensembling-guide/
 
 ## Example:
 
+    $ python correlations.py ./samples/method1.csv ./samples/method2.csv
+    Finding correlation between: ./samples/method1.csv and ./samples/method2.csv
+    Column to be measured: Label
+    Pearson's correlation score: 0.67898
+    Kendall's correlation score: 0.66667
+    Spearman's correlation score: 0.71053
+
     $ python kaggle_vote.py "./samples/method*.csv" "./samples/kaggle_vote.csv"
     parsing: ./samples/method1.csv
     parsing: ./samples/method2.csv
