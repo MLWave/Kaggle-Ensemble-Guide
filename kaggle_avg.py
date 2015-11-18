@@ -11,7 +11,10 @@ def kaggle_bag(glob_files, loc_outfile, method="average", weights="uniform"):
   with open(loc_outfile,"wb") as outfile:
     for i, glob_file in enumerate( glob(glob_files) ):
       print "parsing:", glob_file
-      for e, line in enumerate( open(glob_file) ):
+      # sort glob_file by first column, ignoring the first line
+      lines = open(glob_file).readlines()
+      lines = [lines[0]] + sorted(lines[1:])
+      for e, line in enumerate( lines ):
         if i == 0 and e == 0:
           outfile.write(line)
         if e > 0:
