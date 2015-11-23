@@ -31,6 +31,12 @@ For more information: http://mlwave.com/kaggle-ensembling-guide/
     parsing: ./samples/method3.csv
     wrote to ./samples/kaggle_avg.csv
 
+    $ python kaggle_geomean.py  "./samples/method*.csv" "./samples/kaggle_geomean.csv"
+    parsing: ./samples/method1.csv
+    parsing: ./samples/method2.csv
+    parsing: ./samples/method3.csv
+    wrote to ./samples/kaggle_geomean.csv
+
 ## Result:
 
     ==> ./samples/method1.csv <==
@@ -80,3 +86,11 @@ For more information: http://mlwave.com/kaggle-ensembling-guide/
     3,9
     4,2
     5,3
+
+    ==> ./samples/kaggle_geomean.csv <==
+    ImageId,Label
+    1,1.587401
+    2,0.000000
+    3,7.862224
+    4,3.301927
+    5,3.000000
