@@ -10,19 +10,19 @@ if len(sys.argv) == 4:
   weights_strategy = sys.argv[3]
 
 def kaggle_bag(glob_files, loc_outfile, method="average", weights="uniform"):
-  pattern = re.compile("^_[w|W](\d*)_[.]*")
+  pattern = re.compile(r"(.)*_[w|W](\d*)_[.]*")
   if method == "average":
     scores = defaultdict(list)
   with open(loc_outfile,"wb") as outfile:
-    #weight_liss may be usefull using a different method
+    #weight_list may be usefull using a different method
     weight_list = [1]*len(glob(glob_files))
     for i, glob_file in enumerate( glob(glob_files) ):
       print "parsing:", glob_file
       if weights == "weighted":
          weight = pattern.match(glob_file)
-         if weight:
-            print "Using weight: ",int(weight.group(1))
-            weight_list[i] = weight_list[i]*int(weight.group(1))
+         if weight and weight.group(2):
+            print "Using weight: ",int(weight.group(2))
+            weight_list[i] = weight_list[i]*int(weight.group(2))
          else:
             print "Using weight: 1"
       # sort glob_file by first column, ignoring the first line
