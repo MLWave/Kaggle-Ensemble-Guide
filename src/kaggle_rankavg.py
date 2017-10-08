@@ -7,11 +7,11 @@ glob_files = sys.argv[1]
 loc_outfile = sys.argv[2]
 
 def kaggle_bag(glob_files, loc_outfile):
-  with open(loc_outfile,"wb") as outfile:
+  with open(loc_outfile,"w") as outfile:
     all_ranks = defaultdict(list)
     for i, glob_file in enumerate( glob(glob_files) ):
       file_ranks = []
-      print "parsing:", glob_file
+      print("parsing: {}".format(glob_file))
       # sort glob_file by first column, ignoring the first line
       lines = open(glob_file).readlines()
       lines = [lines[0]] + sorted(lines[1:])
@@ -31,6 +31,6 @@ def kaggle_bag(glob_files, loc_outfile):
       ranked_ranks.append((k[1][0],k[1][1],rank/(len(average_ranks)-1)))
     for k in sorted(ranked_ranks):
       outfile.write("%s,%s\n"%(k[1],k[2]))
-    print("wrote to %s"%loc_outfile)
+    print("wrote to {}".format(loc_outfile))
 
 kaggle_bag(glob_files, loc_outfile)

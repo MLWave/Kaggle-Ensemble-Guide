@@ -10,10 +10,10 @@ def corr(first_file, second_file):
   # assuming first column is `prediction_id` and second column is `prediction`
   prediction = first_df.columns[0]
   # correlation
-  print "Finding correlation between: %s and %s" % (first_file,second_file)
-  print "Column to be measured: %s" % prediction
-  print "Pearson's correlation score: %0.5f" % first_df[prediction].corr(second_df[prediction],method='pearson')
-  print "Kendall's correlation score: %0.5f" % first_df[prediction].corr(second_df[prediction],method='kendall')
-  print "Spearman's correlation score: %0.5f" % first_df[prediction].corr(second_df[prediction],method='spearman')
+  print("Finding correlation between: {} and {}".format(first_file,second_file))
+  print("Column to be measured: {}".format(prediction))
+  print("Pearson's correlation score: {}".format(first_df[prediction].corr(second_df[prediction],method='pearson')))
+  print("Kendall's correlation score: {}".format(first_df[prediction].corr(second_df[prediction],method='kendall')))
+  print("Spearman's correlation score: {}".format(first_df[prediction].corr(second_df[prediction],method='spearman')))
 
 corr(first_file, second_file)

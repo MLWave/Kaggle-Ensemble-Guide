@@ -8,9 +8,9 @@ loc_outfile = sys.argv[2]
 def kaggle_bag(glob_files, loc_outfile, method="average", weights="uniform"):
   if method == "average":
     scores = defaultdict(float)
-  with open(loc_outfile,"wb") as outfile:
+  with open(loc_outfile,"w") as outfile:
     for i, glob_file in enumerate( glob(glob_files) ):
-      print "parsing:", glob_file
+      print("parsing: {}".format(glob_file))
       # sort glob_file by first column, ignoring the first line
       lines = open(glob_file).readlines()
       lines = [lines[0]] + sorted(lines[1:])
@@ -22,6 +22,6 @@ def kaggle_bag(glob_files, loc_outfile, method="average", weights="uniform"):
           scores[(e,row[0])] += float(row[1])
     for j,k in sorted(scores):
       outfile.write("%s,%f\n"%(k,scores[(j,k)]/(i+1)))
-    print("wrote to %s"%loc_outfile)
+    print("wrote to {}".format(loc_outfile))
 
 kaggle_bag(glob_files, loc_outfile)
