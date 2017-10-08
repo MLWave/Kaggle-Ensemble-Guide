@@ -19,7 +19,7 @@ For more information: http://mlwave.com/kaggle-ensembling-guide/
     parsing: ./samples/method3.csv
     wrote to ./samples/kaggle_vote.csv
 
-    $ python kaggle_vote.py "./samples/_*.csv" "./samples/kaggle_vote.csv" "weighted"
+    $ python kaggle_vote.py "./samples/_*.csv" "./samples/kaggle_vote_weighted.csv" "weighted"
     parsing: ./samples/_w3_method1.csv
     Using weight: 3
     parsing: ./samples/_w2_method2.csv
