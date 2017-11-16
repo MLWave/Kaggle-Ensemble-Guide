@@ -31,7 +31,7 @@ For more information: http://mlwave.com/kaggle-ensembling-guide/
     Using weight: 2
     parsing: ./samples/_w2_method3.csv
     Using weight: 2
-    wrote to ./samples/kaggle_vote.csv
+    wrote to ./samples/kaggle_vote_weighted.csv
 
     $ python ./src/kaggle_rankavg.py "./samples/method*.csv" "./samples/kaggle_rankavg.csv"
     parsing: ./samples/method1.csv
