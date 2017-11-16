@@ -4,6 +4,10 @@ Kaggle-Ensemble-Guide
 A combination of Model Ensembling methods that is extremely useful for increasing accuracy of Kaggle's submission.
 For more information: http://mlwave.com/kaggle-ensembling-guide/
 
+## Installation:
+
+    $ pip install -r requirements.txt
+
 ## Example:
 
     $ python correlations.py ./samples/method1.csv ./samples/method2.csv
